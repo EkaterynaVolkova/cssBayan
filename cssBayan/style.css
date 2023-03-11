@@ -1,18 +1,28 @@
+  html {
+    font-size: calc(1em + 0.5vw);
+  }
+  
   body{
     font-family: Tahoma, Geneva, sans-serif;
-    font-size: 2vh;
     color: black;
-    line-height: 1.4;
     overflow-x: hidden;
   }
 
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 0.75rem;
+  }
+
   .container {
-    width: 80%;
+    width: 80vw;
     height: 100vh;
     margin: 0 auto;
   }
 
-.container .accordion {
+ .accordion {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -21,7 +31,7 @@
 }
 
 .accordion li {
-    border-top: 2px solid lightgray;
+    border-top: 0.25vh solid lightgray;
     padding: 0;
 }
 
@@ -29,25 +39,25 @@
    display: none;
 }
 
-.accordion-tab h4{
+.accordion .accordion-tab h4{
     margin: 0;
-    padding: 2% 0;
+    padding: 1vw 0;
 }
 
-.accordion-top {
+.accordion .accordion-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.accordion-tab i{
-    font-size: 4vh;
+.accordion .accordion-tab i{
+    font-size: 1.5rem;
     opacity: 0;
     transform: rotate(0deg);
     transition: opacity .5s ease-in-out, transform .5s ease-in-out;
 }
 
-.accordion-tab img{
+.accordion .accordion-tab img{
     width: 0;
     height: 0;
     padding: 0;
@@ -56,18 +66,18 @@
     transition: width .5s ease-in-out, height .5s ease-in-out;
 }
 
-li:has( input[type="radio"]:checked ) img{
-    width: 60vw;
+.accordion li:has( input[type="radio"]:checked ) img{
+    width: 50%;
     height: auto;
-    padding: 2vw;
+    padding: 1vw;
 }
 
 
-li:has( input[type="radio"]:checked ){
+.accordion li:has( input[type="radio"]:checked ){
     color: black;
 }
 
-li:has( input[type="radio"]:active ){
+.accordion li:has( input[type="radio"]:active ){
     opacity: 0.6;
     color: blue;
 }
@@ -79,14 +89,14 @@ li:has( input[type="radio"]:active ){
         color: black;
     }
 
-    .accordion  * {
+    .accordion:hover  * {
         cursor: pointer;
     }
 
     .accordion-tab:hover img{
         width: 50%;
         height: auto;
-        padding: 2vw;
+        padding: 1vw;
     }
 
     .accordion-tab:hover i{
@@ -106,11 +116,6 @@ li:has( input[type="radio"]:active ){
 }
 
 @media (min-width: 820px) {
-
-    li:has( input[type="radio"]:checked ) img{
-        width: 50%;
-    }
-
     .container {
         max-width: 1024px;
     }
