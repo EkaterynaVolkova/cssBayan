@@ -13,7 +13,8 @@
   }
 
 .container .accordion {
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     padding: 0;
     list-style-type: none;
     color: blue;
@@ -66,12 +67,24 @@ li:has( input[type="radio"]:checked ){
     color: black;
 }
 
+li:has( input[type="radio"]:active ){
+    opacity: 0.6;
+    color: blue;
+}
+
  /* when hover is supported */
 @media (hover: hover) {
 
+    .accordion:hover{
+        color: black;
+    }
+
+    .accordion  * {
+        cursor: pointer;
+    }
+
     .accordion-tab:hover img{
         width: 50%;
-        /* max-width: 500px; */
         height: auto;
         padding: 2vw;
     }
@@ -81,9 +94,6 @@ li:has( input[type="radio"]:checked ){
         transform: rotate(45deg);
     }
 
-    .accordion:hover{
-        color: black;
-    }
 
     .accordion:hover .accordion-tab i{
         opacity: 1;
@@ -105,13 +115,3 @@ li:has( input[type="radio"]:checked ){
         max-width: 1024px;
     }
 }
-
-/* @media (min-width: 1920px) {
-    .accordion-tab img{
-        width: 50%;
-    }
-
-    .container {
-        max-width: 1024px;
-    }
-} */
