@@ -1,0 +1,117 @@
+  body{
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 2vh;
+    color: black;
+    line-height: 1.4;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+  }
+
+.container .accordion {
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    color: blue;
+}
+
+.accordion li {
+    border-top: 2px solid lightgray;
+    padding: 0;
+}
+
+.accordion input[type="radio"]{
+   display: none;
+}
+
+.accordion-tab h4{
+    margin: 0;
+    padding: 2% 0;
+}
+
+.accordion-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-tab i{
+    font-size: 4vh;
+    opacity: 0;
+    transform: rotate(0deg);
+    transition: opacity .5s ease-in-out, transform .5s ease-in-out;
+}
+
+.accordion-tab img{
+    width: 0;
+    height: 0;
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    transition: width .5s ease-in-out, height .5s ease-in-out;
+}
+
+li:has( input[type="radio"]:checked ) img{
+    width: 60vw;
+    height: auto;
+    padding: 2vw;
+}
+
+
+li:has( input[type="radio"]:checked ){
+    color: black;
+}
+
+ /* when hover is supported */
+@media (hover: hover) {
+
+    .accordion-tab:hover img{
+        width: 50%;
+        /* max-width: 500px; */
+        height: auto;
+        padding: 2vw;
+    }
+
+    .accordion-tab:hover i{
+        opacity: 1;
+        transform: rotate(45deg);
+    }
+
+    .accordion:hover{
+        color: black;
+    }
+
+    .accordion:hover .accordion-tab i{
+        opacity: 1;
+    }
+
+    .accordion:hover li:has( input[type="radio"]:checked ) i{
+        opacity: 1;
+        transform: rotate(45deg);
+    }
+}
+
+@media (min-width: 820px) {
+
+    li:has( input[type="radio"]:checked ) img{
+        width: 50%;
+    }
+
+    .container {
+        max-width: 1024px;
+    }
+}
+
+/* @media (min-width: 1920px) {
+    .accordion-tab img{
+        width: 50%;
+    }
+
+    .container {
+        max-width: 1024px;
+    }
+} */
