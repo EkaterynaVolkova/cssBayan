@@ -1,0 +1,122 @@
+  html {
+    font-size: calc(1em + 0.5vw);
+  }
+  
+  body{
+    font-family: Tahoma, Geneva, sans-serif;
+    color: black;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 0.75rem;
+  }
+
+  .container {
+    width: 80vw;
+    height: 100vh;
+    margin: 0 auto;
+  }
+
+ .accordion {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    color: blue;
+}
+
+.accordion li {
+    border-top: 0.25vh solid lightgray;
+    padding: 0;
+}
+
+.accordion input[type="radio"]{
+   display: none;
+}
+
+.accordion .accordion-tab h4{
+    margin: 0;
+    padding: 1vw 0;
+}
+
+.accordion .accordion-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion .accordion-tab i{
+    font-size: 1.5rem;
+    opacity: 0;
+    transform: rotate(0deg);
+    transition: opacity .5s ease-in-out, transform .5s ease-in-out;
+}
+
+.accordion .accordion-tab img{
+    width: 0;
+    height: 0;
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    transition: width .5s ease-in-out, height .5s ease-in-out;
+}
+
+.accordion li:has( input[type="radio"]:checked ) img{
+    width: 50%;
+    height: auto;
+    padding: 1vw;
+}
+
+
+.accordion li:has( input[type="radio"]:checked ){
+    color: black;
+}
+
+.accordion li:has( input[type="radio"]:active ){
+    opacity: 0.6;
+    color: blue;
+}
+
+ /* when hover is supported */
+@media (hover: hover) {
+
+    .accordion:hover{
+        color: black;
+    }
+
+    .accordion:hover  * {
+        cursor: pointer;
+    }
+
+    .accordion-tab:hover img{
+        width: 50%;
+        height: auto;
+        padding: 1vw;
+    }
+
+    .accordion-tab:hover i{
+        opacity: 1;
+        transform: rotate(45deg);
+    }
+
+
+    .accordion:hover .accordion-tab i{
+        opacity: 1;
+    }
+
+    .accordion:hover li:has( input[type="radio"]:checked ) i{
+        opacity: 1;
+        transform: rotate(45deg);
+    }
+}
+
+@media (min-width: 820px) {
+    .container {
+        max-width: 1024px;
+    }
+}
